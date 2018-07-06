@@ -1,0 +1,15 @@
+group 'pt.isel.ngspipes'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':engine_core')
+    compile project(':engine_local')
+}
