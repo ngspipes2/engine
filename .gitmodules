@@ -4,3 +4,6 @@
 [submodule "engine_executor"]
 	path = engine_executor
 	url = https://github.com/ngspipes2/engine_executor.git
+[submodule "ngspipes2"]
+	path = ngspipes2
+	url = https://github.com/ngspipes2/engine_common.git
