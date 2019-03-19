@@ -1,9 +1,6 @@
 [submodule "engine_core"]
 	path = engine_core
 	url = https://github.com/ngspipes2/engine_core.git
-[submodule "engine_local"]
-	path = engine_local
-	url = https://github.com/ngspipes2/engine_local.git
-[submodule "engine_chronos"]
-	path = engine_chronos
-	url = https://github.com/ngspipes2/engine_chronos.git
+[submodule "engine_executor"]
+	path = engine_executor
+	url = https://github.com/ngspipes2/engine_executor.git
