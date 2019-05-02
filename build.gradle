@@ -11,5 +11,20 @@ repositories {
 
 dependencies {
     compile project(':engine_core')
-    compile project(':engine_local')
+    compile project(':engine_common')
+    compile project(':engine_executor')
+
+}
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+
+def engineProjects = [':dsl',':engine']
+task engineJar( type: Jar , dependsOn: engineProjects.collect{ it+":compileJava"}) {
+    baseName = 'build/engine-1.0'
+    from files(engineProjects.collect{ project(it).sourceSets.main.output })
 }
