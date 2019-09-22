@@ -1,0 +1,3 @@
+-pipes E:/Work/NGSPipes/ngspipes2/engine_local/src/test/resources/pipeline.pipes -out E:/Work/NGSPipes/ngspipes2/engine_local/src/test/resources/outputs -parallel false -parameters blastx_out=blast.out -mem 6144 -workingDirectory D:
+
+-ir E:\Work\NGSPipes\ngspipes2\main\engine\engine_local\src\test\resources\ir.json E:\Work\NGSPipes\ngspipes2\main\engine\engine_local\src\test\resources\ -out E:\Desktop\NGSPipesTeam\Demo\Outputs -parallel false -parameters blastx_out=blast.out -mem 2048
