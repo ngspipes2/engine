@@ -1,0 +1,75 @@
+Properties: {
+
+    author: "NGSPipes Team"
+
+    description: "Study case 1"
+
+    version:  "1.0"
+
+    documentation: ["http://ngspipes.readthedocs.io/en/latest/RunningExamples.html"]
+
+}
+
+
+
+Repositories: [
+
+    ToolRepository repo: {
+
+        location: "E:\\Work\\NGSPipes\\ngspipes2\\main\\engine\\engine_core\\src\\test\\resources\\tools_support"
+
+    }
+
+]
+
+
+
+Outputs: {
+
+    output2: blastx[outFile]
+
+}
+
+
+
+Steps: [
+
+    Step blastx: {
+
+        exec: repo[Blast][blastx]
+
+        execution_context: "DockerConfig"
+
+        inputs: {
+
+            db: makeblastdb[outFileName]
+
+            query: "E:\\Desktop\\NGSPipesTeam\\Demo\\Inputs\\caseStudy1Minimal\\contigs.fa"
+
+            out: params.blastx_out
+
+        }
+
+    }
+
+    Step makeblastdb: {
+
+        exec: repo[Blast][makeblastdb]
+
+        execution_context: "DockerConfig"
+
+        inputs: {
+
+            dbtype: "prot"
+
+            out: "allrefs"
+
+            title: "allrefs"
+
+            in: "E:\\Desktop\\NGSPipesTeam\\Demo\\Inputs\\caseStudy1Minimal\\allrefs.fna.pro"
+
+        }
+
+    }
+
+]

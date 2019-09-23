@@ -1,0 +1,55 @@
+Properties: {
+
+    author: "NGSPipes Team"
+
+    description: "Study case 1.1"
+
+    version:  "1.0"
+
+    documentation: ["http://ngspipes.readthedocs.io/en/latest/RunningExamples.html"]
+
+}
+
+
+
+Repositories: [
+
+    ToolRepository repo: {
+
+        location: "E:\\Work\\NGSPipes\\ngspipes2\\main\\engine\\engine_core\\src\\test\\resources\\tools_support"
+
+    }
+
+]
+
+
+
+Outputs: {
+
+}
+
+
+
+Steps: [
+
+    Step makeblastdb: {
+
+        exec: repo[Blast][makeblastdb]
+
+        execution_context: "DockerConfig"
+
+        inputs: {
+
+            dbtype: "prot"
+
+            out: "allrefs"
+
+            title: "allrefs"
+
+            in: "E:\\Desktop\\NGSPipesTeam\\Demo\\Inputs\\caseStudy1Minimal\\allrefs.fna.pro"
+
+        }
+
+    }
+
+]

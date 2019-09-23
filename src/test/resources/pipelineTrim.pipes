@@ -1,0 +1,75 @@
+Properties: {
+
+    author: "NGSPipes Team"
+
+    description: "Study case 1"
+
+    version:  "1.0"
+
+    documentation: ["http://ngspipes.readthedocs.io/en/latest/RunningExamples.html"]
+
+}
+
+
+
+Repositories: [
+
+    ToolRepository repo: {
+
+        location: "E:\\Work\\NGSPipes\\ngspipes2\\main\\engine\\engine_core\\src\\test\\resources\\tools_support"
+
+    }
+
+]
+
+
+
+Outputs: {
+
+    output1: trimmomatic[outputFile]
+
+}
+
+
+
+Steps: [
+
+    Step trimmomatic: {
+
+        exec: repo[Trimmomatic][trimmomatic]
+
+        execution_context: "DockerConfig"
+
+        inputs: {
+
+            mode: "SE"
+
+            quality: "phred33"
+
+            inputFile1: "E:\\Desktop\\NGSPipesTeam\\Demo\\Inputs\\caseStudy1\\ERR406040.fastq"
+
+            output: "ERR406040.filtered.fastq"
+
+            fastaWithAdaptersEtc: "E:\\Desktop\\NGSPipesTeam\\Demo\\Inputs\\caseStudy1Minimal\\TruSeq3-SE.fa"
+
+            seedMismatches: 2
+
+            palindromeClipThreshold: 30
+
+            simpleClipThreshold: 10
+
+            windowSize: 4
+
+            requiredQuality: 15
+
+            leadingQuality: 3
+
+            trailingQuality: 3
+
+            minlenLength: 36
+
+        }
+
+    }
+
+]
