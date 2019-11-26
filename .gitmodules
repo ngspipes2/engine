@@ -7,3 +7,7 @@
 [submodule "engine_common"]
 	path = engine_common
 	url = https://github.com/ngspipes2/engine_common.git
+[submodule "engine_app"]
+	path = engine_app
+	url = https://github.com/ngspipes2/engine_app.git
+	branch = master
